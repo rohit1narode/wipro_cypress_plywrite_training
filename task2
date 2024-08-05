@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change DOM Element Every 2 Seconds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #changingElement {
+            font-size: 24px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="changingElement">Initial Text</div>
+    <script>
+        const element = document.getElementById('changingElement');
+        const messages = [
+            "Message 1: Hello",
+            "Message 2: How are you today?",
+            "Message 3: JavaScript is fun!",
+            "Message 4: Keep learning!",
+            "Message 5: Have a great day!"
+        ];
+        let index = 0;
+        setInterval(() => {
+            element.textContent = messages[index];
+            index = (index + 1) % messages.length;
+        }, 2000);
+    </script>
+
+</body>
+</html>
